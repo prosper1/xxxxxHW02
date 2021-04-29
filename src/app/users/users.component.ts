@@ -31,7 +31,7 @@ export class UsersComponent implements OnInit {
     // get user fresh copy
     this.users = this.getUsers()
 
-    if(this.users != null || this.users.length != 0 ){
+    if(this.users != null){
       console.log(this.users)
       // Get User from Local Storage and sanitize it
       const userMap  = this.users.map(item => {
