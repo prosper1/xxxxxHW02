@@ -1,8 +1,8 @@
-<h1>Edit User</h1>
 
+<br>
 
 <form [formGroup]="form" (ngSubmit)="onSubmit()" class="user-form">
-  
+  <h1 class="header">Edit User</h1>
     <table class="example-full-width" cellspacing="0"><tr>
         <td><mat-form-field appearance="outline" class="example-full-width">
             <mat-label>Title</mat-label>
@@ -36,11 +36,11 @@
     </tr></table>
     <br>
     <table class="example-full-width" cellspacing="0"><tr>
-        <td><mat-form-field class="example-full-width">
+        <td><mat-form-field appearance="outline" class="example-full-width">
             <mat-label>Password</mat-label>
             <input matInput formControlName="password"  [ngClass]="{ 'is-invalid': submitted && f.password.errors }" type="password">
           </mat-form-field></td>
-      <td><mat-form-field class="example-full-width">
+      <td><mat-form-field appearance="outline" class="example-full-width">
         <mat-label>Confirm Password</mat-label>
         <input matInput formControlName="password"  [ngClass]="{ 'is-invalid': submitted && f.password.errors }" type="password">
       </mat-form-field></td>
