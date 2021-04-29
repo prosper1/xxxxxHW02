@@ -34,7 +34,8 @@ export class EditUserComponent implements OnInit {
     this.userId = Number(this.route.snapshot.params['id']);
     
     if(this.users != null){
-      const user = this.users.filter(item => item.id === this.userId);
+      const userFilter = this.users.filter(item => item.id === this.userId);
+      const user = userFilter[0]
       this.form = this.formBuilder.group({
         firstName: [user.firstName, [ Validators.required]],
         secondName: [user.secondName, [ Validators.required]],

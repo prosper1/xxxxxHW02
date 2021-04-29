@@ -62,4 +62,8 @@ export class UsersComponent implements OnInit {
     this.router.navigate(['edit-user',id])
   }
 
+  gotoAdd(): void {
+    this.router.navigate(['add-user'])
+  }
+
 }

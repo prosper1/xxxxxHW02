@@ -13,7 +13,8 @@ import { EditUserComponent } from './edit-user/edit-user.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButton } from '@angular/material/button';
-import {MatSelectModule} from '@angular/material/select'; 
+import {MatSelectModule} from '@angular/material/select';
+import {MatButtonModule} from '@angular/material/button'; 
 
 @NgModule({
   declarations: [
@@ -31,8 +32,10 @@ import {MatSelectModule} from '@angular/material/select';
     MatIconModule,
     MatInputModule,
     MatSelectModule,
+    MatButtonModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+
     FormsModule,
   ],
   providers: [],
