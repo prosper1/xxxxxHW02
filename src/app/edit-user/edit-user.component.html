@@ -1,0 +1,55 @@
+<h1>Edit User</h1>
+
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="user-form">
+  
+    <table class="example-full-width" cellspacing="0"><tr>
+        <td><mat-form-field class="example-full-width">
+            <mat-label>Title</mat-label>
+            <input matInput formControlName="title"  [ngClass]="{ 'is-invalid': submitted && f.title.errors }">
+          </mat-form-field></td>
+      <td><mat-form-field class="example-full-width">
+        <mat-label>First name</mat-label>
+        <input matInput formControlName="firstName"  [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }">
+      </mat-form-field></td>
+      <td><mat-form-field class="example-full-width">
+        <mat-label>Long Last Name That Will Be Truncated</mat-label>
+        <input matInput formControlName="email"  [ngClass]="{ 'is-invalid': submitted && f.secondName.errors }">
+      </mat-form-field></td>
+    </tr></table>
+    <p>.</p>
+    <table class="example-full-width" cellspacing="0"><tr>
+        <td><mat-form-field class="example-full-width">
+            <mat-label>Email Address</mat-label>
+            <input matInput formControlName="email"  [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+          </mat-form-field></td>
+      <td>
+      <mat-form-field appearance="fill">
+        <mat-label>Role</mat-label>
+        <mat-select formControlName="role"  [ngClass]="{ 'is-invalid': submitted && f.role.errors }">
+          <mat-option>None</mat-option>
+          <mat-option *ngFor="let role of roles" [value]="role">{{role}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </td>
+      
+    </tr></table>
+    <br>
+    <table class="example-full-width" cellspacing="0"><tr>
+        <td><mat-form-field class="example-full-width">
+            <mat-label>Password</mat-label>
+            <input matInput formControlName="password"  [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+          </mat-form-field></td>
+      <td><mat-form-field class="example-full-width">
+        <mat-label>Confirm Password</mat-label>
+        <input matInput formControlName="password"  [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+      </mat-form-field></td>
+      
+    </tr></table>
+  
+    
+  
+    <button type="submit">Save</button>    <button>Cancel</button>
+  </form>
+  
+
