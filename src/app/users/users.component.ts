@@ -59,7 +59,7 @@ export class UsersComponent implements OnInit {
   }
 
   updateUser(id): void {
-    this.router.navigate(['users',id])
+    this.router.navigate(['edit-user',id])
   }
 
 }

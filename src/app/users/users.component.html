@@ -29,6 +29,16 @@
         <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
             <mat-icon>more_vert</mat-icon>
         </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>
+            <span (click)="updateUser(element.Symbol)">Update</span>
+          </button>
+          <button mat-menu-item disabled>
+            
+            <span>Delete</span>
+          </button>
+      
+        </mat-menu>
     </td>
       
     </ng-container>
@@ -37,15 +47,6 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
 
-  <mat-menu #menu="matMenu">
-    <button mat-menu-item>
-      <span>Update</span>
-    </button>
-    <button mat-menu-item disabled>
-      
-      <span>Delete</span>
-    </button>
-
-  </mat-menu>
+  
   
   

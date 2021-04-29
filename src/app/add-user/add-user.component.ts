@@ -66,7 +66,6 @@ export class AddUserComponent implements OnInit {
 
     };
 
-    console.log(testUser)
 
     // stop here if form is invalid
     if (this.form.invalid) {
@@ -96,6 +95,7 @@ export class AddUserComponent implements OnInit {
 
     if(this.users != null){
       this.users.push(newUser)
+      localStorage.setItem('users',JSON.stringify(this.users))
     }
     
     else{
@@ -103,7 +103,7 @@ export class AddUserComponent implements OnInit {
       localStorage.setItem('users',JSON.stringify([newUser]))
     }
 
-    localStorage.setItem('users',JSON.stringify(this.users))
+   
     this.router.navigate(['users'])
 
   }

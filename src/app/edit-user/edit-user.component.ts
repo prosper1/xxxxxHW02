@@ -28,27 +28,22 @@ export class EditUserComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.form = this.formBuilder.group({
-      firstName: ['', [ Validators.required]],
-      secondName: ['', [ Validators.required]],
-      title: ['', [ Validators.required]],
-      email: ['', [ Validators.required, Validators.email]],
-      role: ['', [ Validators.required]],
-      password: ['', [ Validators.required]]
-    });
-
+    
     this.users = this.getUsers()
 
     this.userId = Number(this.route.snapshot.params['id']);
-
+    
     if(this.users != null){
-
       const user = this.users.filter(item => item.id === this.userId);
-      this.f.firstName.setValue(user.firstName)
-      this.f.secondName.setValue(user.secondName)
-      this.f.title.setValue(user.title)
-      this.f.email.setValue(user.email)
-      this.f.role.setValue(user.role)
+      this.form = this.formBuilder.group({
+        firstName: [user.firstName, [ Validators.required]],
+        secondName: [user.secondName, [ Validators.required]],
+        title: [user.title, [ Validators.required]],
+        email: [user.email, [ Validators.required, Validators.email]],
+        role: [user.role, [ Validators.required]],
+        password: [user.password, [ Validators.required]]
+      });
+      
     }
     
 
