@@ -80,12 +80,18 @@ export class EditUserComponent implements OnInit {
       password: this.f.password.value,
     };
 
-    console.log(newUser)
     this.users = this.getUsers()
 
-    if(this.users != null){
-      this.users.push()
-    }
+    const newUserData = this.users.map(item => item.id === this.userId? { 
+      ...item, newUser }
+        : item
+    );
+
+    console.log(newUserData)
+    localStorage.setItem('users',JSON.stringify(newUserData))
+
+
+    this.router.navigate(['users'])
 
   }
 
