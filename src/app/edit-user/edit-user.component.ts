@@ -100,5 +100,9 @@ export class EditUserComponent implements OnInit {
     return JSON.parse(localStorage.getItem('users'))
   }
 
+  cancel(): void {
+    this.router.navigate(['users'])
+  }
+
 
 }

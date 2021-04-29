@@ -112,5 +112,8 @@ export class AddUserComponent implements OnInit {
   getUsers(): object {
     return JSON.parse(localStorage.getItem('users'))
   }
+  cancel(): void {
+    this.router.navigate(['users'])
+  }
 
 }
