@@ -82,13 +82,26 @@ export class EditUserComponent implements OnInit {
 
     this.users = this.getUsers()
 
-    const newUserData = this.users.map(item => item.id === this.userId? { 
-      ...item, newUser }
-        : item
-    );
+    const userFilter = this.users.filter(item => item.id === this.userId);
+    const user = userFilter[0]
 
-    console.log(newUserData)
-    localStorage.setItem('users',JSON.stringify(newUserData))
+    const pos = this.users.indexOf(user);
+
+    if (~pos) {
+        this.users[pos] = {
+          id: this.userId,
+          firstName: this.f.firstName.value,
+          secondName: this.f.secondName.value,
+          title: this.f.title.value,
+          email: this.f.email.value,
+          role: this.f.role.value,
+          password: this.f.password.value,
+        };
+    }
+
+    
+
+    localStorage.setItem('users',JSON.stringify(this.users))
 
 
     this.router.navigate(['users'])

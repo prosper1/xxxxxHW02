@@ -14,7 +14,11 @@ import { AddUserComponent } from './add-user/add-user.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButton } from '@angular/material/button';
 import {MatSelectModule} from '@angular/material/select';
-import {MatButtonModule} from '@angular/material/button'; 
+import {MatButtonModule} from '@angular/material/button';
+import { DialogOverviewExampleDialog } from './delete-modal/delete-modal.component'; 
+import {MatDialogModule } from '@angular/material/dialog';
+import { MatCardModule } from '@angular/material/card';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +26,8 @@ import {MatButtonModule} from '@angular/material/button';
     UsersComponent,
     AddUsersComponent,
     EditUserComponent,
-    AddUserComponent
+    AddUserComponent,
+    DialogOverviewExampleDialog
   ],
   imports: [
     BrowserModule,
@@ -33,6 +38,8 @@ import {MatButtonModule} from '@angular/material/button';
     MatInputModule,
     MatSelectModule,
     MatButtonModule,
+    MatDialogModule,
+    MatCardModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
 

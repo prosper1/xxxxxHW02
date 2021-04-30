@@ -14,23 +14,25 @@ export class AddUserComponent implements OnInit {
   submitted: boolean;
   loading: boolean;
   users: any;
+  confirmPasswordMatch: boolean = true;
   roles = [
     'User',
-    'Stuff',
     'Admin'
   ]
 
   titles = [
     'Mr',
+    'Miss',
     'Mrs',
-    'Other'
+    'Ms'
+    
   ]
   
   constructor(
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
     private router: Router,
-  ) { }
+  ) { } 
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
@@ -71,11 +73,13 @@ export class AddUserComponent implements OnInit {
     if (this.form.invalid) {
       return;
     }
-
     // validates password match and stop here.
     if (this.f.password.value != this.f.confirmPassword.value){
+      this.form.controls['confirmPassword'].setErrors({'incorrect': true});
+      this.confirmPasswordMatch = false;
+
       return;
-    }
+    } else this.confirmPasswordMatch = true;
 
     this.loading = true;
 

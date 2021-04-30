@@ -37,9 +37,9 @@
           <button mat-menu-item>
             <span (click)="updateUser(element.Symbol)">Update</span>
           </button>
-          <button mat-menu-item disabled>
+          <button mat-menu-item>
             
-            <span>Delete</span>
+            <span (click)="openDialog(element.Symbol)">Delete</span>
           </button>
       
         </mat-menu>

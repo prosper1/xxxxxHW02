@@ -12,14 +12,17 @@
                 <mat-option>None</mat-option>
                 <mat-option *ngFor="let title of titles" [value]="title">{{title}}</mat-option>
               </mat-select>
+              <mat-hint>your title</mat-hint>
           </mat-form-field></td>
       <td><mat-form-field appearance="outline" class="example-full-width">
         <mat-label>First name</mat-label>
         <input matInput formControlName="firstName"  [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }">
+        <mat-hint>your name</mat-hint>
       </mat-form-field></td>
       <td><mat-form-field appearance="outline"  class="example-full-width">
         <mat-label>Second Name</mat-label>
         <input matInput formControlName="secondName"  [ngClass]="{ 'is-invalid': submitted && f.secondName.errors }">
+        <mat-hint>your second name</mat-hint>
       </mat-form-field></td>
     </tr></table>
     <p>.</p>
@@ -27,6 +30,7 @@
         <td><mat-form-field appearance="outline" class="example-full-width">
             <mat-label>Email Address</mat-label>
             <input matInput formControlName="email"  [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+            <mat-hint>your email address</mat-hint>
           </mat-form-field></td>
       <td>
       <mat-form-field appearance="outline">
@@ -35,6 +39,7 @@
           <mat-option>None</mat-option>
           <mat-option *ngFor="let role of roles" [value]="role">{{role}}</mat-option>
         </mat-select>
+        <mat-hint>your course center detail</mat-hint>
       </mat-form-field>
     </td>
       
@@ -43,11 +48,13 @@
     <table class="example-full-width" cellspacing="0"><tr>
         <td><mat-form-field appearance="outline" class="example-full-width">
             <mat-label>Password</mat-label>
-            <input matInput formControlName="password"  [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+            <input matInput formControlName="password"  [ngClass]="{ 'is-invalid': submitted && f.password.errors }" type="password">
+            <mat-hint>your password</mat-hint>
           </mat-form-field></td>
       <td><mat-form-field appearance="outline" class="example-full-width">
         <mat-label>Confirm Password</mat-label>
-        <input matInput formControlName="confirmPassword"  [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }">
+        <input matInput formControlName="confirmPassword"  [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }" type="password">
+        <mat-hint>confirm your password, must match</mat-hint>
       </mat-form-field></td>
       
     </tr></table>
